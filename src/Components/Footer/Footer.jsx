@@ -5,7 +5,7 @@ import imgTwiter from "../../assets/twiter.svg";
 const Footer = () => {
     return (
        <div className=" bg-neutral text-neutral-content ">
-         <footer className=" sm:footer-horizontal bg-neutral text-neutral-content  md:grid  md:grid-cols-4  text-center  md:p-10 mx-auto">
+         <footer className=" sm:footer-horizontal bg-neutral text-neutral-content  md:grid  md:grid-cols-4  text-center  md:p-10 p-3 mx-auto">
   <nav>
     <h6 className="footer-title text-left mt-7">CS — Ticket System</h6>
    <p className=" text-sm text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
