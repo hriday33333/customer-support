@@ -12,7 +12,7 @@ const TicketSection = ({coustomarsPromise}) => {
     return (
          <div className='  md:w-11/12  mx-auto  md:py-10 p-6 grid grid-cols-12 md:p-0   md:gap-5 gap-1.5'>
 
-      <div className=' md:col-span-8 col-span-8'>
+      <div className=' md:col-span-9 col-span-7'>
         <div className=" text-xl font-bold p-2">Customer Tickets</div>
 
         <div className='  md:grid grid-cols-2 gap-5 md:space-y-0 space-y-3 '>
@@ -23,9 +23,9 @@ const TicketSection = ({coustomarsPromise}) => {
              <div className=" flex justify-between ">
             <h1 className=' font-bold'>{customer.title
 }</h1>
-            <div className={`rounded-lg ${customer.status=="Open" ? "bg-green-200" : "bg-yellow-200"} flex justify-between items-center`}>
+            <div className={`rounded-xl  md:h-[30px] ${customer.status=="Open" ? "bg-green-200" : "bg-yellow-200"} flex justify-between items-center`}>
                 {
-                  customer.status=="Open" ? <img className=' p-2' src={imgGreen} alt="" /> : <img className=' p-2' src={imgYello} alt="" />
+                  customer.status=="Open" ? <img className=' w-[30px] p-2' src={imgGreen} alt="" /> : <img className=' w-[30px] p-2' src={imgYello} alt="" />
                 }
                 <p className=' text-gray-700 text-sm p-2'>{customer.status}</p>
             </div>
