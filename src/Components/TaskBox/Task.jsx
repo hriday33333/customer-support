@@ -8,12 +8,12 @@ const Task = ({ selectedCustomers }) => {
         
       </div>
 
-      <div className="space-y-2 mt-3">
+      <div className="space-y-4 mt-3">
         {selectedCustomers.length === 0 ? (
           <p className="text-gray-400">Selected tickets will appear here</p>
         ) : (
           selectedCustomers.map((customer) => (
-            <div key={customer.id} className="p-3 bg-slate-100 rounded-md shadow-lg border-b-2 border-b-green-700">
+            <div key={customer.id} className="p-3 bg-slate-200  rounded-md shadow-lg border-r-1 border-b-1 border-b-green-700">
               <h2 className="font-bold">{customer.title}</h2>
               <button className=" mt-4 btn bg-green-700 w-full text-white">Complete</button>
             </div>
