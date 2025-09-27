@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 import Banner from './Components/Banner/Banner';
@@ -7,34 +8,39 @@ import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
 import TicketSection from './Components/TicketSectin/TicketSection';
 
-const fatchCoustmer = async () =>{
-  const res = await fetch("/coustomars.json")
-  return res.json()
-}
-const coustomarsPromise = fatchCoustmer()
+const fetchCustomers = async () => {
+  const res = await fetch("/coustomars.json");
+  return res.json();
+};
+
+const customersPromise = fetchCustomers();
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [selectedCustomers, setSelectedCustomers] = useState([]) 
+  const [count, setCount] = useState(0); // In-Progress count
+  const [selectedCustomers, setSelectedCustomers] = useState([]);
+  const [resolvedCustomers, setResolvedCustomers] = useState([]);
 
   return (
     <>
       <Navbar />
-      <Banner count={count} />
+
+      <Banner count={count} resolvedCount={resolvedCustomers.length} />
 
       <Suspense fallback="Loading...">
-        <TicketSection 
-          setCount={setCount} 
-          coustomarsPromise={coustomarsPromise} 
+        <TicketSection
+          coustomarsPromise={customersPromise}
+          setCount={setCount}
+          selectedCustomers={selectedCustomers}
           setSelectedCustomers={setSelectedCustomers}
-          selectedCustomers={selectedCustomers}    
+          resolvedCustomers={resolvedCustomers}
+          setResolvedCustomers={setResolvedCustomers}
         />
       </Suspense>
 
       <Footer />
       <ToastContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
