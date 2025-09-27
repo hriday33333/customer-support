@@ -1,14 +1,22 @@
 
 
-import { use } from 'react';
-
+import { use, } from 'react';
+import { toast } from 'react-toastify';
 import imgGreen from '../../assets/Green-dot.svg';
 import calendar from '../../assets/calander.svg';
 import imgYello from '../../assets/yellw-dot.svg';
 import Task from '../TaskBox/Task';
-const TicketSection = ({coustomarsPromise}) => {
+const TicketSection = ({coustomarsPromise, setCount, setSelectedCustomers, selectedCustomers  }) => {
   const coustomarsData = use(coustomarsPromise)
-  console.log(coustomarsData)
+
+
+  const handleClick = (customer) => {
+     toast(`In-Progress`);
+     setSelectedCustomers(prev => [...prev, customer]);
+    setCount(prev => prev + 1);
+    
+  };
+  
     return (
          <div className='  md:w-11/12  mx-auto  md:py-10 p-6 grid grid-cols-12 md:p-0   md:gap-5 gap-1.5'>
 
@@ -19,7 +27,10 @@ const TicketSection = ({coustomarsPromise}) => {
 
 
           {
-            coustomarsData.map(customer=> <div key={customer.id} className=' p-5 bg-slate-200 rounded-2xl  shadow-xl'>
+            coustomarsData.map(customer=> <div 
+            key={customer.id} 
+             onClick={() => handleClick(customer)} 
+            className=' p-5 bg-slate-200 rounded-2xl  shadow-xl cursor-pointer'>
              <div className=" flex justify-between ">
             <h1 className=' font-bold'>{customer.title
 }</h1>
@@ -53,7 +64,8 @@ const TicketSection = ({coustomarsPromise}) => {
 
 
 
-      <Task></Task>
+      <Task selectedCustomers={selectedCustomers} />
+
 
 
 

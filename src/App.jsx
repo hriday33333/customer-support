@@ -1,33 +1,38 @@
-import { Suspense } from 'react'
-import './App.css'
-import Banner from './Components/Banner/Banner'
-import Footer from './Components/Footer/Footer'
+import { Suspense, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
-import Navbar from './Components/Navbar/Navbar'
-import TicketSection from './Components/TicketSectin/TicketSection'
+import './App.css';
+import Banner from './Components/Banner/Banner';
+import Footer from './Components/Footer/Footer';
+import Navbar from './Components/Navbar/Navbar';
+import TicketSection from './Components/TicketSectin/TicketSection';
 
 const fatchCoustmer = async () =>{
-  const res = await fetch("/public/coustomars.json")
+  const res = await fetch("/coustomars.json")
   return res.json()
 }
 const coustomarsPromise = fatchCoustmer()
 
 function App() {
-  
+  const [count, setCount] = useState(0)
+  const [selectedCustomers, setSelectedCustomers] = useState([]) // ✅ plural
 
   return (
     <>
-    <Navbar></Navbar>
+      <Navbar />
+      <Banner count={count} />
 
+      <Suspense fallback="Loading...">
+        <TicketSection 
+          setCount={setCount} 
+          coustomarsPromise={coustomarsPromise} 
+          setSelectedCustomers={setSelectedCustomers}  // ✅ plural
+          selectedCustomers={selectedCustomers}        // ✅ plural
+        />
+      </Suspense>
 
-    <Banner></Banner>
-
-   <Suspense fallback="Loading...">
-    <TicketSection coustomarsPromise={coustomarsPromise}></TicketSection>
-   </Suspense>
-   
-    <Footer></Footer>
-  
+      <Footer />
+      <ToastContainer />
     </>
   )
 }
