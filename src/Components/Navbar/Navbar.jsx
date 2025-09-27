@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className=" md:hidden">
       <button className=" bg-gradient-to-br from-violet-700 to-purple-500 p-1 rounded   text-white">+ New Ticket</button>
     </div>
-    <div className="md:hidden">
+    <div className="md:hidden hidden">
     <details className="dropdown">
       <summary className=" btn ml-2 hover:bg-gradient-to-br from-violet-700 to-purple-500">...</summary>
       <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
