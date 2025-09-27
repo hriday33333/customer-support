@@ -15,7 +15,7 @@ const coustomarsPromise = fatchCoustmer()
 
 function App() {
   const [count, setCount] = useState(0)
-  const [selectedCustomers, setSelectedCustomers] = useState([]) // ✅ plural
+  const [selectedCustomers, setSelectedCustomers] = useState([]) 
 
   return (
     <>
@@ -26,8 +26,8 @@ function App() {
         <TicketSection 
           setCount={setCount} 
           coustomarsPromise={coustomarsPromise} 
-          setSelectedCustomers={setSelectedCustomers}  // ✅ plural
-          selectedCustomers={selectedCustomers}        // ✅ plural
+          setSelectedCustomers={setSelectedCustomers}
+          selectedCustomers={selectedCustomers}    
         />
       </Suspense>
 

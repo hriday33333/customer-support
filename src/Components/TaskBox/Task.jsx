@@ -2,7 +2,7 @@
 import Resolved from '../../Components/ResolvedTask/Resolved';
 const Task = ({ selectedCustomers }) => {
   return (
-    <div className='border md:col-span-3 col-span-5 p-2'>
+    <div className=' md:col-span-3 col-span-5 p-2'>
       <div>
         <div className="text-xl font-bold">Task Status</div>
         
