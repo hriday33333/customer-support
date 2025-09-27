@@ -16,7 +16,7 @@ const fetchCustomers = async () => {
 const customersPromise = fetchCustomers();
 
 function App() {
-  const [count, setCount] = useState(0); // In-Progress count
+  const [count, setCount] = useState(0);
   const [selectedCustomers, setSelectedCustomers] = useState([]);
   const [resolvedCustomers, setResolvedCustomers] = useState([]);
 

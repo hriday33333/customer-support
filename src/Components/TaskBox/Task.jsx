@@ -16,13 +16,9 @@ const Task = ({ selectedCustomers, handleDeleteCustomer, resolvedCustomers }) =>
               <h2 className="font-bold">{customer.title}</h2>
               <p className="text-sm text-gray-600">{customer.description}</p>
               <p className="text-xs text-gray-400">Status: {customer.status}</p>
-
               <button
                 className="mt-4 btn bg-green-700 w-full text-white"
-                onClick={() => {
-                  handleDeleteCustomer(customer.id);
-                  alert(`Completed: ${customer.title}`);
-                }}
+                onClick={() => handleDeleteCustomer(customer.id)}
               >
                 Complete
               </button>

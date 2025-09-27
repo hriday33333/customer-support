@@ -22,7 +22,6 @@ const TicketSection = ({
   };
 
   const handleDeleteCustomer = (id) => {
-    // Remove from selected and move to resolved
     const removed = selectedCustomers.find(c => c.id === id);
     setSelectedCustomers(prev => prev.filter(c => c.id !== id));
     setResolvedCustomers(prev => [...prev, removed]);
