@@ -1,6 +1,8 @@
 # 🛠️ Customer Service Ticket Management System
 ![Banner Section](https://i.ibb.co.com/CpH5BXmq/Screenshot-2025-11-19-151359.png)
 
+**Live Site URL:** [http://animated-friction654.surge.sh/](http://animated-friction654.surge.sh/)
+
 A simple and efficient ticket management application built with **React**.
 Users can see total tickets, in-progress tickets, resolved tickets, and manage status updates easily.
 
